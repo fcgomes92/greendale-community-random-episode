@@ -1,0 +1,128 @@
+.title,
+.subtitle {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+}
+
+.action {
+  margin: 2rem 0;
+  text-align: center;
+  &__button {
+    text-transform: uppercase;
+  }
+}
+
+.animation {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.8rem;
+  position: relative;
+  margin-top: 4rem;
+  &__title {
+    padding: 1.6rem 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: #333;
+    color: #fff;
+    line-height: 1.6;
+  }
+  &__id,
+  &__date {
+    line-height: 1.6;
+    font-size: 0.8rem;
+  }
+  &__image {
+    position: absolute;
+    top: -35%;
+    right: -5%;
+    max-width: 10rem;
+    background-color: #222;
+    padding: 0.2rem;
+  }
+  &__rating {
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    background-color: #333;
+    color: rgb(255, 238, 0);
+    padding: 0.4rem;
+    border-radius: 50%;
+    border: solid #222 0.2rem;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      right: -6px;
+      content: "★";
+      color: rgb(220, 220, 0);
+      transform: rotate(15deg);
+    }
+  }
+}
+
+.wheel {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(2160deg);
+    }
+  }
+  animation-fill-mode: both;
+  animation-duration: 4s;
+  animation-timing-function: ease-out;
+  background-size: cover;
+  background-image: url("./assets/monkeyWheel.png");
+  &--rotate {
+    animation-name: rotate;
+  }
+}
+@media (min-width: 32em) {
+  .card {
+    box-sizing: border-box;
+    width: 75%;
+    max-width: 70vw;
+    &__title {
+    }
+    &__id,
+    &__date {
+    }
+    &__image {
+      right: 0;
+    }
+  }
+}
+
+@media (min-width: 64em) {
+  .card {
+    box-sizing: border-box;
+    width: 50%;
+    max-width: 50rem;
+    &__title {
+    }
+    &__id,
+    &__date {
+    }
+    &__image {
+    }
+  }
+}
